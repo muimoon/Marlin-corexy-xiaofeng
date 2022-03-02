@@ -233,7 +233,7 @@
   // Power to steppers and heaters will need to be turned on with M80.
   //#define PS_DEFAULT_OFF
 #endif
-
+  
 // @section temperature
 
 //===========================================================================
@@ -354,6 +354,11 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
+  // Voron 1.9_miu; M106; M303 E0 S215 C8;
+  #define  DEFAULT_Kp 16.10
+  #define  DEFAULT_Ki 0.91
+  #define  DEFAULT_Kd 71.24
+
   // Ultimaker
   #define  DEFAULT_Kp 20.84
   #define  DEFAULT_Ki 1.96
@@ -473,7 +478,7 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-#define USE_XMAX_PLUG
+//#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 
@@ -529,7 +534,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 608}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -544,7 +549,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000}
+#define DEFAULT_MAX_ACCELERATION      { 800, 800, 100, 5000}
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -554,9 +559,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -1391,7 +1396,7 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
 
 //
 // SPEAKER/BUZZER
